@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --sourcedirectory=native
+
+override_dh_auto_configure:
+	JAVA_HOME=/usr/lib/jvm/default-java \
+	dh_auto_configure -- --with-apr=/usr --with-ssl=/usr
+
+override_dh_auto_install:
+	dh_auto_install
+	find $(DEB_DESTDIR) -name "*.la" -exec rm -vf {} \;
+
+# No check target
+override_dh_auto_test:

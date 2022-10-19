@@ -1,0 +1,20 @@
+Debian usage of Tomcat Native Library
+=====================================
+
+Enable Tomcat Native Library in Tomcat 8.x:
+- edit /etc/tomcat8/server.xml to check if AprLifecycleListener is activated
+  [you should remove XML comments if present]
+- start or restart Tomcat by using: service tomcat8 restart
+
+Check library loading at Tomcat 8.x startup:
+- when starting, Tomcat will output the following log message
+  to a file named like /var/log/tomcat8/catalina.*.log
+---
+ INFO [main] Loaded APR based Apache Tomcat Native library [1.2.14] using APR version [1.6.2].
+ INFO [main] APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+ INFO [main] APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+ INFO [main] OpenSSL successfully initialized [OpenSSL 1.1.0f  25 May 2017]
+---
+
+If you are using Tomcat 9.x, follow the instructions above, replacing
+tomcat8 with tomcat9.

@@ -1,0 +1,322 @@
+tomcat-native (1.2.31-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+  * Standards-Version updated to 4.6.0.1
+  * Switch to debhelper level 13
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Mon, 20 Sep 2021 01:15:16 +0200
+
+tomcat-native (1.2.26-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Tue, 05 Jan 2021 16:22:28 +0100
+
+tomcat-native (1.2.25-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Mon, 07 Sep 2020 17:40:23 +0200
+
+tomcat-native (1.2.24-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+  * Standards-Version updated to 4.5.0
+  * Switch to debhelper level 12
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Sun, 31 May 2020 23:00:34 +0200
+
+tomcat-native (1.2.23-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Thu, 11 Jul 2019 22:16:02 +0200
+
+tomcat-native (1.2.21-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+  * Standards-Version updated to 4.3.0
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Thu, 31 Jan 2019 22:11:32 +0100
+
+tomcat-native (1.2.19-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Tue, 11 Dec 2018 00:10:54 +0100
+
+tomcat-native (1.2.18-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+  * Standards-Version updated to 4.2.1
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Tue, 06 Nov 2018 10:47:37 +0100
+
+tomcat-native (1.2.17-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+  * Changed the priority from extra to optional
+  * Standards-Version updated to 4.1.4
+  * Switch to debhelper level 11
+  * Use salsa.debian.org Vcs-* URLs
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Tue, 12 Jun 2018 15:22:46 +0200
+
+tomcat-native (1.2.16-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+  * Standards-Version updated to 4.1.3
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Wed, 10 Jan 2018 00:06:21 +0100
+
+tomcat-native (1.2.14-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+  * Build with OpenSSL 1.1 (Closes: #859742)
+  * Updated debian/README.Debian
+  * Standards-Version updated to 4.1.0
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Thu, 14 Sep 2017 14:27:49 +0200
+
+tomcat-native (1.2.12-2) unstable; urgency=medium
+
+  * Team upload.
+  * Upload to unstable
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Sun, 28 May 2017 01:04:49 +0200
+
+tomcat-native (1.2.12-1) experimental; urgency=medium
+
+  * Team upload.
+  * New upstream release
+    - Removed 01-disable-maintainer-mode.patch (fixed upstream)
+  * Removed the generated configure script from the upstream tarball
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Sun, 14 May 2017 12:55:40 +0200
+
+tomcat-native (1.2.10-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+  * Build with libssl1.0-dev instead of libssl-dev
+  * Fixed a bug in configure.in enabling the maintainer mode when
+    --disable-maintainer-mode is specified
+  * Switch to debhelper level 10
+  * Replaced override_dh_auto_clean in debian/rules with debian/clean
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Thu, 17 Nov 2016 19:04:33 +0100
+
+tomcat-native (1.2.8-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Mon, 04 Jul 2016 17:05:23 +0200
+
+tomcat-native (1.2.7-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release (Closes: #821887)
+    - Depend on libssl-dev (>= 1.0.2~)
+  * Standards-Version updated to 3.9.8 (no changes)
+  * Use secure Vcs-* URLs
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Wed, 18 May 2016 14:39:25 +0200
+
+tomcat-native (1.1.33-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+  * Removed the patch drop_sslv2_support.diff (Closes: #737969)
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Mon, 11 May 2015 13:22:43 +0200
+
+tomcat-native (1.1.32~repack-2) unstable; urgency=medium
+
+  * Team upload.
+  * Fixed the patch disabling the deprecated SSL protocols (Closes: #780447)
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Sat, 14 Mar 2015 22:18:29 +0100
+
+tomcat-native (1.1.32~repack-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+  * Disabled SSLv3 support
+  * Standards-Version updated to 3.9.6 (no changes)
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Wed, 03 Dec 2014 22:47:37 +0100
+
+tomcat-native (1.1.31-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+  * Capitalized the 'Apache Portable Runtime' in the package description
+
+  [ tony mancill ]
+  * Moved the package to Git
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Wed, 30 Jul 2014 00:33:44 +0200
+
+tomcat-native (1.1.30-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+  * Refreshed drop_sslv2_support.diff
+  * Updated README.Debian for Tomcat 8
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Tue, 03 Jun 2014 15:35:20 +0200
+
+tomcat-native (1.1.29-1) unstable; urgency=low
+
+  * Team upload.
+
+  [ Gianfranco Costamagna ]
+  * New upstream release
+
+  [ tony mancill ]
+  * Bump Standards-Version to 3.9.5.
+
+ -- tony mancill <tmancill@debian.org>  Tue, 24 Dec 2013 14:54:00 -0800
+
+tomcat-native (1.1.27-1) unstable; urgency=low
+
+  * New upstream release.
+  * Merge Gianfranco Costamagna work:
+    - d/control: Bump Standards-Version to 3.9.4.
+    - d/{control,compat}: Bump debhelper to 9.
+  * d/control: Update Vcs-* fields with canonical URL.
+  * d/copyright: Fix small issue in DEP-5 format.
+  * Switch to dh7:
+    - d/rules: Upgrade to dh call
+    - d/control: Drop B-D on cdbs.
+  * Install in Multi-Arch location:
+    - d/control: Add Pre-Depends and Multi-Arch fields
+
+ -- Damien Raude-Morvan <drazzib@debian.org>  Mon, 12 Aug 2013 16:11:30 +0200
+
+tomcat-native (1.1.24-1) unstable; urgency=low
+
+  * Team upload.
+  * New upstream release (closes: #685516)
+  * Update README.Debian to include reference to tomcat7.
+
+ -- tony mancill <tmancill@debian.org>  Sat, 25 Aug 2012 03:55:06 +0000
+
+tomcat-native (1.1.23-1) unstable; urgency=low
+
+  [ tony mancill ]
+  * Team upload.
+  * Remove Michael Koch from Uploaders (Closes: #654135)
+
+  [ Damien Raude-Morvan ]
+  * New upstream release.
+  * d/control: Build-Depends on dpkg-dev (>= 1.16.1~) for hardening
+    flags
+  * d/rules: Enable hardening build.
+  * d/copyright: Use copyright-format 1.0.
+  * d/control: Bump Standards-Version to 3.9.3: no changes needed.
+
+ -- Damien Raude-Morvan <drazzib@debian.org>  Fri, 02 Mar 2012 19:51:58 +0100
+
+tomcat-native (1.1.22-1) unstable; urgency=low
+
+  * New upstream release:
+    - Update d/patches/drop_sslv2_support.diff patch.
+
+ -- Damien Raude-Morvan <drazzib@debian.org>  Fri, 12 Aug 2011 20:02:57 +0200
+
+tomcat-native (1.1.20-3) unstable; urgency=low
+
+  * Switch to 3.0 quilt source format.
+  * d/patches/drop_sslv2_support.diff: Drop support for SSLv2
+    (Closes: #622141).
+  * d/copyright: Update to DEP-5 format.
+
+ -- Damien Raude-Morvan <drazzib@debian.org>  Sun, 10 Jul 2011 23:42:01 +0200
+
+tomcat-native (1.1.20-2) unstable; urgency=low
+
+  * Team upload.
+  * Remove *.la (Closes: #621279)
+  * Bump Standards-Version to 3.9.2 (no changes needed)
+
+ -- tony mancill <tmancill@debian.org>  Sat, 09 Apr 2011 10:57:15 -0700
+
+tomcat-native (1.1.20-1) unstable; urgency=low
+
+  * New upstream release:
+    - Prevent crashing JVM on shutdown.
+  * Bump Standards-Version to 3.8.4 (no changes needed)
+
+ -- Damien Raude-Morvan <drazzib@debian.org>  Sat, 20 Feb 2010 22:50:34 +0100
+
+tomcat-native (1.1.19-1) unstable; urgency=low
+
+  * New upstream release.
+    - minor versioning fix
+    - allows building against OpenSSL 1.0
+  * Add a README.Debian to help users to setup Tomcat 6.x
+    with Tomcat Native Library
+
+ -- Damien Raude-Morvan <drazzib@debian.org>  Sun, 17 Jan 2010 01:27:46 +0100
+
+tomcat-native (1.1.18-1) unstable; urgency=high
+
+  * New upstream release.
+    - Fix CVE-2009-3555 SSL-Man-In-The-Middle attack
+    - set urgency=high to get security fix in testing
+
+ -- Damien Raude-Morvan <drazzib@debian.org>  Tue, 24 Nov 2009 01:46:20 +0100
+
+tomcat-native (1.1.17-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - Update my email address
+    - Bump Standards-Version to 3.8.3 (no changes needed)
+    - Bump debhelper version to >= 7
+    - Update upstream Homepage field
+    - Use default-jdk instead of default-jdk-builddep as there is no
+      native (-gcj) package build.
+  * debian/copyright:
+    - Update upstream copyright years
+    - Add myself as debian/* copyright holder
+  * debian/libtcnative-1.lintian-overrides:
+    - Change to be version agnostic
+
+ -- Damien Raude-Morvan <drazzib@debian.org>  Sat, 07 Nov 2009 21:41:36 +0100
+
+tomcat-native (1.1.16-1) unstable; urgency=low
+
+  * New upstream release (Closes: #514500)
+    - Fix IPv6 issues (Closes: #517163, #521306)
+  * debian/control:
+    - Move libtcnative-1 to "java" section
+    - Add myself to Uploaders
+    - Bump Standards-Version to 3.8.1 (no changes needed)
+  * debian/watch: Update to new upstream location
+  * debian/rules: Provide a "get-orig-source" target using uscan
+  * debian/control: Build-Depends on default-jdk-builddep
+  * debian/rules: use JAVA_HOME=/usr/lib/jvm/default-java
+  * Remove debian/libtcnative-1.install and use dh_lintian
+    to install debian/libtcnative-1.lintian-overrides
+
+ -- Damien Raude-Morvan <drazzib@drazzib.com>  Sun, 29 Mar 2009 15:40:58 +0200
+
+tomcat-native (1.1.13-1) unstable; urgency=low
+
+  * Initial release. Closes: #485037.
+
+ -- Michael Koch <konqueror@gmx.de>  Sat, 07 Jun 2008 15:16:14 +0200
