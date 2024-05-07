@@ -14,13 +14,15 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-
 package org.apache.tomcat.jni;
 
 /** Open SSL BIO Callback Interface
  *
  * @author Mladen Turk
+ *
+ * @deprecated Unused. Will be removed in Tomcat 10.1
  */
+@Deprecated
 public interface BIOCallback {
 
     /**

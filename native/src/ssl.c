@@ -926,10 +926,31 @@ TCN_IMPLEMENT_CALL(void, SSL, randSet)(TCN_STDARGS, jstring file)
 
 TCN_IMPLEMENT_CALL(jint, SSL, fipsModeGet)(TCN_STDARGS)
 {
-    UNREFERENCED(o);
 #ifdef OPENSSL_FIPS
+    UNREFERENCED(o);
     return FIPS_mode();
+#elif (OPENSSL_VERSION_NUMBER > 0x2FFFFFFFL)
+    EVP_MD              *md;
+    const OSSL_PROVIDER *provider;
+    const char          *name;
+    UNREFERENCED(o);
+
+    // Maps the OpenSSL 3. x onwards behaviour to theOpenSSL 1.x API
+
+    // Checks that FIPS is the default provider
+    md = EVP_MD_fetch(NULL, "SHA-512", NULL);
+    provider = EVP_MD_get0_provider(md);
+    name = OSSL_PROVIDER_get0_name(provider);
+    // Clean up
+    EVP_MD_free(md);
+
+    if (strcmp("fips", name)) {
+        return 0;
+    } else {
+    	return 1;
+    }
 #else
+    UNREFERENCED(o);
     /* FIPS is unavailable */
     tcn_ThrowException(e, "FIPS was not available to tcnative at build time. You will need to re-build tcnative against an OpenSSL with FIPS.");
 
@@ -954,6 +975,9 @@ TCN_IMPLEMENT_CALL(jint, SSL, fipsModeSet)(TCN_STDARGS, jint mode)
 
       tcn_ThrowException(e, msg);
     }
+#elif (OPENSSL_VERSION_NUMBER > 0x2FFFFFFFL)
+    /* This method should never be called when using OpenSSL 3.x onwards */
+    tcn_ThrowException(e, "fipsModeSet is not supported in OpenSSL 3.x onwards.");
 #else
     /* FIPS is unavailable */
     tcn_ThrowException(e, "FIPS was not available to tcnative at build time. You will need to re-build tcnative against an OpenSSL with FIPS.");
@@ -2001,6 +2025,10 @@ TCN_IMPLEMENT_CALL(jbyteArray, SSL, getSessionId)(TCN_STDARGS, jlong ssl)
     }
     UNREFERENCED(o);
     session = SSL_get_session(ssl_);
+    if (NULL == session) {
+        return NULL;
+    }
+
     session_id = SSL_SESSION_get_id(session, &len);
 
     if (len == 0 || session_id == NULL) {

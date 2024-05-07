@@ -1,3 +1,20 @@
+tomcat-native (1.2.35-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream version 1.2.35.
+    - Restore compatibility with Tomcat 10.1.x. (Closes: #1030871)
+      Thanks to Jorge Moraleda for the report.
+  * Declare compliance with Debian Policy 4.6.2.
+
+ -- Markus Koschany <apo@debian.org>  Sun, 12 Feb 2023 18:35:01 +0100
+
+tomcat-native (1.2.32-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Mon, 02 May 2022 19:03:02 +0200
+
 tomcat-native (1.2.31-1) unstable; urgency=medium
 
   * Team upload.

@@ -2,6 +2,36 @@
 
    This is the Changelog for Tomcat Native 1.2.
 
+  Changes in 1.2.35
+
+     * Docs: Document the TLS rengotiation behaviour. (markt)
+     * Docs: Add HOWTO-RELEASE.txt that describes the release process.
+       (markt)
+     * Update: Update recommended OpenSSL version to 1.1.1q or later. (markt)
+
+  Changes in 1.2.34
+
+     * Code: Refactor library initialization so it is compatible with Tomcat
+       10.1.x onwards where a number of Java classes have been removed.
+       (markt)
+     * Add: Map the OpenSSL 3.x FIPS behaviour to the OpenSSL 1.x API to
+       allow clients to determine if the FIPS provider is being used when
+       Tomcat Native is compiled against OpenSSL 3.x. (markt)
+
+  Changes in 1.2.33
+
+     * Fix: 66035: Fix crash when attempting to read TLS session ID after a
+       handshake failure. (schultz/markt)
+     * Fix: Enable download_deps.sh to be called from any directory. Pull
+       request #12 provided by Dimitrios Soumis. (markt)
+     * Update: Update recommended OpenSSL version to 1.1.1o or later. (markt)
+
+  Changes in 1.2.32
+
+     * Update: Update recommended OpenSSL version to 1.1.1n or later. (markt)
+     * Fix: Fix release script so it works with the current git layout.
+       (markt)
+
   Changes in 1.2.31
 
      * Fix: 65441: Correct previous fix that enabled building to continue
@@ -58,7 +88,7 @@
      * Add: Add support for HP-UX's _lwp_self() in our ssl_thread_id(void).
        (michaelo) Remove default option passed for rpath to linker on HP-UX.
        (michaelo)
-     * Add: Add an option to allow the OCSP responder check to by bypassed.
+     * Add: Add an option to allow the OCSP responder check to be bypassed.
        Note that if OCSP is enabled, a missing responder is now treated as an
        error. (jfclere)
      * Fix: 64429: Fix compilation with LibreSSL. (markt)
@@ -338,4 +368,4 @@
 
    Please see the 1.1.x changelog.
 
-   Copyright © 2008-2020, The Apache Software Foundation
+   Copyright © 2008-2022, The Apache Software Foundation

@@ -21,20 +21,6 @@
                         TODO
 
 
-SSL Renegotiation
------------------
-
-It is unclear to me, what the current state is. It looks like we support
-the unsafe legacy reneg whenever the OpenSSL used during build time
-supports it. There is no configuration option to switch it off during
-runtime. Right?
-
-Is it correct, that client initiated reneg is not supported and thus the
-known attacks will not work even with old OpenSSL?
-
-Should we add a remark about this topic to the docs?
-
-
 Java Tests and Examples
 -----------------------
 
@@ -60,20 +46,9 @@ Java Classes Source Distribution
 Check on how to handle the test and examples classes.
 I think they have no other home.
 
-Furthermore some of the Java files do not exist inside TC:
-- Apr.java, apr.properties, jni/Buffer.java and jni/Thread.java
-I don't know their purpose and whether we can delete them.
-
 
 Releasing
 ---------
-
-- Document how to release.
-
-- Add info about updating config.guess and config.sub from 
-
-http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD
-http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD
 
 - ZIP download seems to have group write permissions set
   (at least after I extract it on Solaris).

@@ -14,7 +14,6 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-
 package org.apache.tomcat.jni;
 
 import java.io.File;
@@ -26,7 +25,7 @@ import java.io.File;
 public final class Library {
 
     /* Default library names */
-    private static final String [] NAMES = {"tcnative-1", "libtcnative-1"};
+    private static final String [] NAMES = {"tcnative-2", "libtcnative-2", "tcnative-1", "libtcnative-1"};
     /*
      * A handle to the unique Library singleton instance.
      */
@@ -41,11 +40,7 @@ public final class Library {
             try {
                 System.load(library.getAbsolutePath());
                 loaded = true;
-            } catch (ThreadDeath t) {
-                throw t;
-            } catch (VirtualMachineError t) {
-                // Don't use a Java 7 multiple exception catch so we can keep
-                // the JNI code identical between Tomcat 6/7/8/9
+            } catch (ThreadDeath | VirtualMachineError t) {
                 throw t;
             } catch (Throwable t) {
                 if (library.exists()) {
@@ -68,11 +63,7 @@ public final class Library {
                 try {
                     System.loadLibrary(value);
                     loaded = true;
-                } catch (ThreadDeath t) {
-                    throw t;
-                } catch (VirtualMachineError t) {
-                    // Don't use a Java 7 multiple exception catch so we can keep
-                    // the JNI code identical between Tomcat 6/7/8/9
+                } catch (ThreadDeath | VirtualMachineError t) {
                     throw t;
                 } catch (Throwable t) {
                     String name = System.mapLibraryName(value);
@@ -146,54 +137,85 @@ public final class Library {
     public static native String aprVersionString();
 
     /*  APR Feature Macros */
+    @Deprecated
     public static boolean APR_HAVE_IPV6           = false;
+    @Deprecated
     public static boolean APR_HAS_SHARED_MEMORY   = false;
+    @Deprecated
     public static boolean APR_HAS_THREADS         = false;
+    @Deprecated
     public static boolean APR_HAS_SENDFILE        = false;
+    @Deprecated
     public static boolean APR_HAS_MMAP            = false;
+    @Deprecated
     public static boolean APR_HAS_FORK            = false;
+    @Deprecated
     public static boolean APR_HAS_RANDOM          = false;
+    @Deprecated
     public static boolean APR_HAS_OTHER_CHILD     = false;
+    @Deprecated
     public static boolean APR_HAS_DSO             = false;
+    @Deprecated
     public static boolean APR_HAS_SO_ACCEPTFILTER = false;
+    @Deprecated
     public static boolean APR_HAS_UNICODE_FS      = false;
+    @Deprecated
     public static boolean APR_HAS_PROC_INVOKED    = false;
+    @Deprecated
     public static boolean APR_HAS_USER            = false;
+    @Deprecated
     public static boolean APR_HAS_LARGE_FILES     = false;
+    @Deprecated
     public static boolean APR_HAS_XTHREAD_FILES   = false;
+    @Deprecated
     public static boolean APR_HAS_OS_UUID         = false;
     /* Are we big endian? */
+    @Deprecated
     public static boolean APR_IS_BIGENDIAN        = false;
     /* APR sets APR_FILES_AS_SOCKETS to 1 on systems where it is possible
      * to poll on files/pipes.
      */
+    @Deprecated
     public static boolean APR_FILES_AS_SOCKETS    = false;
     /* This macro indicates whether or not EBCDIC is the native character set.
      */
+    @Deprecated
     public static boolean APR_CHARSET_EBCDIC      = false;
     /* Is the TCP_NODELAY socket option inherited from listening sockets?
      */
+    @Deprecated
     public static boolean APR_TCP_NODELAY_INHERITED = false;
     /* Is the O_NONBLOCK flag inherited from listening sockets?
      */
+    @Deprecated
     public static boolean APR_O_NONBLOCK_INHERITED  = false;
     /* Poll operations are interruptable by apr_pollset_wakeup().
      */
+    @Deprecated
     public static boolean APR_POLLSET_WAKEABLE      = false;
     /* Support for Unix Domain Sockets.
      */
+    @Deprecated
     public static boolean APR_HAVE_UNIX             = false;
 
 
+    @Deprecated
     public static int APR_SIZEOF_VOIDP;
+    @Deprecated
     public static int APR_PATH_MAX;
+    @Deprecated
     public static int APRMAXHOSTLEN;
+    @Deprecated
     public static int APR_MAX_IOVEC_SIZE;
+    @Deprecated
     public static int APR_MAX_SECS_TO_LINGER;
+    @Deprecated
     public static int APR_MMAP_THRESHOLD;
+    @Deprecated
     public static int APR_MMAP_LIMIT;
 
     /* return global TCN's APR pool */
+    @Deprecated
     public static native long globalPool();
 
     /**
@@ -208,10 +230,11 @@ public final class Library {
      */
     public static synchronized boolean initialize(String libraryName) throws Exception {
         if (_instance == null) {
-            if (libraryName == null)
+            if (libraryName == null) {
                 _instance = new Library();
-            else
+            } else {
                 _instance = new Library(libraryName);
+            }
             TCN_MAJOR_VERSION  = version(0x01);
             TCN_MINOR_VERSION  = version(0x02);
             TCN_PATCH_VERSION  = version(0x03);
@@ -276,7 +299,10 @@ public final class Library {
      * configurations), so that it can be loaded by multiple Webapps.
      *
      * @param filename - absolute path of the native library
+     *
+     * @deprecated Unused. Will be removed in Tomcat 10.1.x
      */
+    @Deprecated
     public static void load(String filename){
         System.load(filename);
     }
@@ -294,7 +320,10 @@ public final class Library {
      * configurations), so that it can be loaded by multiple Webapps.
      *
      * @param libname - the name of the native library
+     *
+     * @deprecated Unused. Will be removed in Tomcat 10.1.x
      */
+    @Deprecated
     public static void loadLibrary(String libname){
         System.loadLibrary(libname);
     }

@@ -21,7 +21,7 @@
 
 Summary: Tomcat Native Java library
 Name: tcnative
-Version: 1.2.31
+Version: 1.2.35
 Release: 1
 License: Apache Software License
 Group: System Environment/Libraries

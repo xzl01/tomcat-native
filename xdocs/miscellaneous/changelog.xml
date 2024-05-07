@@ -23,16 +23,63 @@
 
   &project;
 
-  <properties>
-    <author email="jfclere@apache.org">Jean-Frederic Clere</author>
-  </properties>
-
 <body>
 
 <section name="Preface">
   <p>
   This is the Changelog for Tomcat Native 1.2.
   </p>
+</section>
+<section name="Changes in 1.2.35">
+  <changelog>
+    <docs>
+      Document the TLS rengotiation behaviour. (markt)
+    </docs>
+    <docs>
+      Add HOWTO-RELEASE.txt that describes the release process. (markt)
+    </docs>
+    <update>
+      Update recommended OpenSSL version to 1.1.1q or later. (markt)
+    </update>
+  </changelog>
+</section>
+<section name="Changes in 1.2.34">
+  <changelog>
+    <scode>
+      Refactor library initialization so it is compatible with Tomcat 10.1.x
+      onwards where a number of Java classes have been removed. (markt)
+    </scode>
+    <add>
+      Map the OpenSSL 3.x FIPS behaviour to the OpenSSL 1.x API to allow clients
+      to determine if the FIPS provider is being used when Tomcat Native is
+      compiled against OpenSSL 3.x. (markt)
+    </add>
+  </changelog>
+</section>
+<section name="Changes in 1.2.33">
+  <changelog>
+    <fix>
+      <bug>66035</bug>: Fix crash when attempting to read TLS session ID after a
+      handshake failure. (schultz/markt)
+    </fix>
+    <fix>
+      Enable <code>download_deps.sh</code> to be called from any directory. Pull
+      request <pr>12</pr> provided by Dimitrios Soumis. (markt)
+    </fix>
+    <update>
+      Update recommended OpenSSL version to 1.1.1o or later. (markt)
+    </update>
+  </changelog>
+</section>
+<section name="Changes in 1.2.32">
+  <changelog>
+    <update>
+      Update recommended OpenSSL version to 1.1.1n or later. (markt)
+    </update>
+    <fix>
+      Fix release script so it works with the current git layout. (markt)
+    </fix>
+  </changelog>
 </section>
 <section name="Changes in 1.2.31">
   <changelog>
@@ -128,7 +175,7 @@
       Remove default option passed for rpath to linker on HP-UX. (michaelo)
     </remove>
     <add>
-      Add an option to allow the OCSP responder check to by bypassed. Note that
+      Add an option to allow the OCSP responder check to be bypassed. Note that
       if OCSP is enabled, a missing responder is now treated as an error.
       (jfclere)
     </add>
